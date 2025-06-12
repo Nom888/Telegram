@@ -4856,6 +4856,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     recordingAudioFile.delete();
                 }
             }
+            if (send != 0 && recordingAudioFile != null) {
+                recordingAudioFile = changeVoice(recordingAudioFile);
+            }
             if (send == 0) {
                 stopRecordingInternal(0, false, 0, false, 0);
             }
